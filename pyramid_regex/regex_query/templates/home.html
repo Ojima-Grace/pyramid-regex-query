@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %}
+
+{% block content %}
+<div class="container mt-3" align="center">
+    <h2>Please Choose:</h2>
+    <button type="button" class="btn btn-outline-dark"><a href="{% url 'full_match' %}" style="text-decoration: none; color: black;">Full Match</a></button>
+    <button type="button" class="btn btn-outline-dark"><a href="{% url 'first_match' %}" style="text-decoration: none; color: black;">First Match</a></button>
+</div>
+
+{% endblock content %}

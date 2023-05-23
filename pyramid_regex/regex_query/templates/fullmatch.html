@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %} full-match {% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <h1 align="center">Full-Match</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3 mt-3">
+            <label for="text">Text:</label>
+            <textarea class="form-control" rows="5" id="text" name="text"></textarea>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="regex">Regex-Query:</label>
+            <input type="text" name="regex_query" class="form-control form-control-lg">
+        </div>
+        <button type="submit" class="btn btn-outline-dark">Search</button>
+    </form>
+    <div class="mb-3 mt-3">
+        <h2 class="mb-3 mt-3">Matches:</h2>
+        <ul>
+            {% for match in matches %}
+              <li>{{ match }}</li>
+            {% empty %}
+              <li>No matches found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="mb-3 mt-3" align="center">
+        <button type="button" class="btn btn-outline-dark"><a href="{% url 'home' %}" style="text-decoration: none; color: black;">Home</a></button>
+        <button type="button" class="btn btn-outline-dark"><a href="{% url 'full_match' %}" style="text-decoration: none; color: black;">First Match</a></button>
+    </div>
+</div>
+{% endblock content %}
