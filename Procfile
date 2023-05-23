@@ -1,1 +1,1 @@
-web: gunicorn pyramid_regex.wsgi --log-file -
+web gunicorn runserver:app
