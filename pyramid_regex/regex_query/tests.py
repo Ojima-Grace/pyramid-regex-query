@@ -8,12 +8,12 @@ class QueryToolTests(TestCase):
         self.assertTemplateUsed(response, 'home.html')
 
     def test_full_match(self):
-        response = self.client.post(reverse('full_match'), {'text': 'Sample text', 'regex_query': 'sample'})
+        response = self.client.post(reverse('full_match'), {'text': 'Sample text', 'regex_querry': 'sample'})
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'fullmatch.html')
         
     def test_first_match(self):
-        response = self.client.post(reverse('first_match'), {'text': 'Sample text', 'regex_query': 'sample'})
+        response = self.client.post(reverse('first_match'), {'text': 'Sample text', 'regex_querry': 'sample'})
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'firstmatch.html')
 
