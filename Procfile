@@ -1,0 +1,1 @@
+web: gunicorn pyramid_regex.wsgi --log-file -
